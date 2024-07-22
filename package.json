@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "pm2-runtime start ecosystem.config.js --env production",
-    "dev": "nodemon ./src/server.js",
+    "dev": "nodemon --exec sucrase-node ./src/index.js",
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "lint": "eslint ./src/**/*.js",
+    "lint:fix": "eslint ./src/**/*.js --fix"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +32,12 @@
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "eslint": "^8.57.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "sucrase": "^3.35.0"
   }
 }
