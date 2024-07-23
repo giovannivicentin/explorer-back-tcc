@@ -2,10 +2,10 @@
   "name": "explorer-back-tcc",
   "version": "1.0.0",
   "description": "Final project for the Explorer course by Rocketseat, which trains you to become a full-stack developer. This project is the backend of the project",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "pm2-runtime start ecosystem.config.js --env production",
-    "dev": "nodemon --exec sucrase-node ./src/index.js",
+    "dev": "nodemon --exec sucrase-node ./src/server.js",
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run",
     "test": "jest --watch",
