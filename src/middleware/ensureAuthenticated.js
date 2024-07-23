@@ -9,9 +9,10 @@ function ensureAuthenticated(request, response, next) {
     throw new AppError('JWT Token não informado.', 401);
   }
 
-  const [, token] = authHeader.split(' '); // BEARER, XXXXX
+  const [, token] = authHeader.split(' ');
 
   try {
+    // eslint-disable-next-line camelcase
     const { sub: user_id } = verify(token, authConfig.jwt.secret);
 
     request.user = {

@@ -6,6 +6,7 @@ const PlatesController = require('../Controllers/PlatesController');
 const ensureAuthenticated = require('../middleware/ensureAuthenticated');
 const ensureIsAdmin = require('../middleware/ensureAuthenticatedAdmin');
 
+// eslint-disable-next-line new-cap
 const platesRoutes = Router();
 const upload = multer(uploadConfig.MULTER);
 

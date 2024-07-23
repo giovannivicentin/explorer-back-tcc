@@ -11,6 +11,7 @@ class PlatesController {
 
     const filename = await diskStorage.saveFile(imageFilename);
 
+    // eslint-disable-next-line camelcase
     const plates_id = await knex('plates').insert({
       image: filename,
       title,
@@ -25,12 +26,14 @@ class PlatesController {
     if (hasOnlyOneIngredient) {
       ingredientsInsert = {
         name: ingredients,
+        // eslint-disable-next-line camelcase
         plates_id
       };
     } else if (ingredients.length > 1) {
       ingredientsInsert = ingredients.map((ingredient) => {
         return {
           name: ingredient,
+          // eslint-disable-next-line camelcase
           plates_id
         };
       });
